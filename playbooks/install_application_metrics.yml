@@ -3,6 +3,5 @@
   gather_facts: no
   roles:
   - role: middleware_monitoring
-    username: username
     monitoring_namespace: openshift-application-metrics
     when: application_metrics | default(true) | bool
