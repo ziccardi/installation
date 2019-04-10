@@ -4,4 +4,5 @@
   roles:
   - role: middleware_monitoring
     monitoring_namespace: openshift-application-metrics
+    monitoring_display_name: Application Metrics
     when: application_metrics | default(true) | bool
