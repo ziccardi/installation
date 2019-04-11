@@ -1,5 +1,6 @@
 ---
 monitoring_namespace: "{{ns_prefix | default('')}}middleware-monitoring"
+namespace_postfix: ""
 monitoring_display_name: "Managed Service Monitoring"
 monitoring_tmp_dir: /tmp
 
