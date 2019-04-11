@@ -47,6 +47,7 @@
 - import_playbook: "./install_middleware_monitoring.yml"
 - import_playbook: "./install_application_metrics.yml"
 - import_playbook: "./install_user_rhsso.yml"
+- import_playbook: "./install_application_metrics.yml"
 - import_playbook: "./generate-customisation-inventory.yml"
 - import_playbook: "./customise_web_console_install.yml"
 - import_playbook: "./apply_ocp_roles.yml"
