@@ -2,8 +2,5 @@
 - hosts: localhost
   gather_facts: no
   roles:
-  - role: middleware_monitoring
-    monitoring_namespace: openshift-application-metrics
-    namespace_postfix: -{{ monitoring_namespace }}
-    monitoring_display_name: Application Metrics
+  - role: application_monitoring
     when: application_metrics | default(true) | bool
