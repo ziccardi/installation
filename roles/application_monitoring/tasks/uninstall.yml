@@ -1,14 +1,7 @@
 ---
-- include: ./delete_resource_from_template.yml
-  with_items: "{{ monitoring_resource_templates }}"
-
-- name: Delete required operator resources
-  shell: "oc delete -f {{ item }} -n {{ monitoring_namespace }}"
-  register: monitoring_resource_delete
-  failed_when: monitoring_resource_delete.stderr != '' and 'NotFound' not in monitoring_resource_delete.stderr and "no matches for kind" not in monitoring_resource_delete.stderr
-  with_items: "{{ monitoring_resources }}"
-
-- name: Delete monitoring namespace
-  shell: "oc delete project {{ monitoring_namespace }}"
-  register: monitoring_namespace_delete
-  failed_when: monitoring_namespace_delete.stderr != '' and 'NotFound' not in monitoring_namespace_delete.stderr and "no matches for kind" not in monitoring_namespace_delete.stderr
+- include_role:
+    name: middleware_monitoring
+  vars:
+    monitoring_namespace: "{{ app_monitoring_namespace }}"
+    namespace_postfix: "{{ app_monitoring_postfix }}"
+    monitoring_display_name: "{{ app_monitoring_display_name }}"
